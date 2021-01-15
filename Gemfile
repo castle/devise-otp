@@ -15,7 +15,7 @@ group :test do
   end
 
   gem "rails", ">= 5.0", "< 7.0"
-  gem "sprockets", "< 4.0"
+  gem "sprockets"
 
   gem "capybara"
   gem 'byebug'

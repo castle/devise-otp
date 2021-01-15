@@ -19,5 +19,5 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'rails',  '>= 3.2.6', '< 7'
   gem.add_runtime_dependency 'devise', '>= 3.1.0', '< 5'
-  gem.add_runtime_dependency 'rotp',   '>= 2.0.0', '< 6'
+  gem.add_runtime_dependency 'rotp',   '>= 2.0.0', '< 7'
 end
