@@ -1,4 +1,19 @@
-# Devise::OTP
+# Devise::OTP (Castle fork)
+
+> **This is Castle's fork of [`wmlele/devise-otp`](https://github.com/wmlele/devise-otp).**
+> The `2.0.0.castle` branch tracks upstream `master` (post-`v2.0.0`) plus
+> a small set of Castle-only patches:
+>
+> - `.tool-versions` pins Ruby 3.3.10 to match the `web` app
+> - `standardrb` placeholder gem removed (it's an inoperative stub that
+>   prints a "this gem does nothing" warning on every `bundle install`)
+> - Versioned as `2.0.0.castle.N` so the gem is visibly distinct from
+>   upstream `2.0.0` when resolved from Bundler
+>
+> We prefer upstreaming changes — only patches that can't reasonably
+> live upstream should land here. When upstream cuts a release that
+> covers our deltas, this branch should be re-synced (`git reset --hard
+> upstream/master` and replay the Castle commits).
 
 Devise OTP is a Two-Factor Authentication extension for Devise. The second factor is done using an [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238) Time-Based One-Time Password (TOTP) implemented by the [rotp library](https://github.com/mdp/rotp).
 
