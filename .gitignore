@@ -38,7 +38,9 @@ test/dummy/storage/**
 test/dummy/db/*.sqlite3*
 
 # Local bundler install (when running `bundle install` without --system).
-vendor/bundle/
+# `**/vendor/bundle/` matches at any depth so per-Appraisal gemfile installs
+# under `gemfiles/vendor/bundle/` are also ignored.
+**/vendor/bundle/
 
 # Ignore Gemfile.lock
 Gemfile.lock
