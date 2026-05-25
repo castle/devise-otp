@@ -35,6 +35,10 @@ lib/bundler/man
 test/dummy/log/**
 test/dummy/tmp/**
 test/dummy/storage/**
+test/dummy/db/*.sqlite3*
+
+# Local bundler install (when running `bundle install` without --system).
+vendor/bundle/
 
 # Ignore Gemfile.lock
 Gemfile.lock
