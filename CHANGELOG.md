@@ -1,5 +1,25 @@
 # Changelog
 
+## 2.0.0.castle.0 (Castle fork)
+
+This is the initial release of Castle's fork of `wmlele/devise-otp`,
+tracking upstream `master` (post-`v2.0.0`, includes Devise 5 support,
+Rails 8.1 support, Ruby 4 in CI matrix).
+
+Castle-only changes on top of upstream `master`:
+
+- Pin Ruby 3.3.10 via `.tool-versions` to align with Castle's `web`
+  app.
+- Drop the `standardrb` placeholder gem from `Gemfile` and
+  `gemfiles/rails_*.gemfile` — it's an inoperative placeholder per
+  its own install-time warning, and nothing in the source tree
+  references it.
+- Add fork notice to `README.md`.
+- Bump `VERSION` to `2.0.0.castle.0`.
+
+This fork's `2.0.0.castle` branch should be re-synced whenever
+upstream cuts a release that covers our deltas.
+
 ## v2.0.0
 
 Bug fixes:
