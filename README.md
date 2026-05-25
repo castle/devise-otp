@@ -7,6 +7,9 @@
 > - `.tool-versions` pins Ruby 3.3.10 to match the `web` app
 > - `standardrb` placeholder gem removed (it's an inoperative stub that
 >   prints a "this gem does nothing" warning on every `bundle install`)
+> - `appraisal` dropped as a dev dependency; `gemfiles/rails_*.gemfile`
+>   are now hand-maintained (CI already invokes them via
+>   `BUNDLE_GEMFILE`, mirroring how `castle_devise` does it)
 > - Versioned as `2.0.0.castle.N` so the gem is visibly distinct from
 >   upstream `2.0.0` when resolved from Bundler
 >

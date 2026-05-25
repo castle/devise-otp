@@ -3,8 +3,6 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in devise-otp.gemspec
 gemspec
 
-gem "appraisal", git: "https://github.com/thoughtbot/appraisal.git"
-
 gem "capybara"
 gem "debug"
 gem "minitest-reporters", ">= 0.5.0"

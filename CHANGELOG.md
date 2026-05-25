@@ -14,6 +14,11 @@ Castle-only changes on top of upstream `master`:
   `gemfiles/rails_*.gemfile` — it's an inoperative placeholder per
   its own install-time warning, and nothing in the source tree
   references it.
+- Drop the `appraisal` dev dependency, `bin/appraisal`, and the
+  `Appraisals` DSL file. CI invokes `gemfiles/rails_*.gemfile`
+  directly via `BUNDLE_GEMFILE`, so the regenerator was unused
+  outside of dev workflows. Per-Rails gemfiles are now
+  hand-maintained (same approach as `castle_devise`).
 - Add fork notice to `README.md`.
 - Bump `VERSION` to `2.0.0.castle.0`.
 
