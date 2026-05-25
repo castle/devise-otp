@@ -14,6 +14,7 @@ gem "timecop", "~> 0.9.10"
 gem "rubocop-rails-omakase", require: false
 gem "erb_lint", require: false
 gem "debug"
+gem "devise", "~> 5.0"
 gem "rails", "~> 8.1.0"
 
 gemspec path: "../"
