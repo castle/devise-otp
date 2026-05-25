@@ -18,5 +18,4 @@ gem "timecop", "~> 0.9.10"
 
 # Formatting gems
 gem "erb_lint",              require: false
-gem "standardrb",            require: false
 gem "rubocop-rails-omakase", require: false

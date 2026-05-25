@@ -12,7 +12,6 @@ gem "shoulda"
 gem "sprockets-rails"
 gem "sqlite3", "~> 2.1"
 gem "timecop", "~> 0.9.10"
-gem "standardrb", require: false
 gem "rubocop-rails-omakase", require: false
 gem "erb_lint", require: false
 gem "debug"
