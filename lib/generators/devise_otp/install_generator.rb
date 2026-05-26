@@ -42,6 +42,12 @@ module DeviseOtp
   # Custom view path for Devise OTP controllers
   #config.otp_controller_path = 'devise'
 
+  # When true (the default), the database_authenticatable strategy issues the
+  # OTP challenge redirect itself during sign-in. Set to false if you want the
+  # strategy to succeed without redirecting, and drive the OTP challenge from
+  # your own controller (e.g. to run a risk check first).
+  #config.otp_challenge_via_strategy = true
+
         CONTENT
 
         inject_into_file "config/initializers/devise.rb", content, before: /end[ |\n]+\Z/

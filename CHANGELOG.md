@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.0.castle.1 (Castle fork)
+
+- Fix `Refreshable` hook raising `TypeError` on every sign-in when
+  `otp_credentials_refresh` is set to `false`. Upstream guarded on
+  `defined?(record.class.otp_credentials_refresh)`, which is always
+  truthy for any model that includes `:otp_authenticatable`
+  (`Devise::Models.config` defines the accessor on the class). Switched
+  to a truthy-value check so disabled refresh settings short-circuit
+  the assignment instead of attempting `Time.now + false`.
+- Add `Devise.otp_challenge_via_strategy` config option (default
+  `true`, preserving the upstream 2.0.0 behaviour). Setting it to
+  `false` makes `Devise::Strategies::DatabaseAuthenticatable` succeed
+  without redirecting to the OTP challenge, so applications that need
+  to run additional logic between authentication and the OTP redirect
+  (e.g. a risk check that decides which OTP flow to use) can drive the
+  challenge from a controller instead of the Warden strategy. This
+  mirrors the pre-2.0.0 flow.
+
 ## 2.0.0.castle.0 (Castle fork)
 
 This is the initial release of Castle's fork of `wmlele/devise-otp`,

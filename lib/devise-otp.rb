@@ -68,6 +68,18 @@ module Devise
   @@otp_controller_path = "devise"
 
   #
+  # When true (the default), the database_authenticatable strategy issues the OTP
+  # challenge redirect itself during `warden.authenticate!`. Set to false if your
+  # app needs to run additional logic (e.g. a risk check) between authentication
+  # and the OTP redirect, and would rather drive the challenge from a controller.
+  # In that case, the strategy succeeds as if no OTP were required, and the
+  # controller is responsible for invoking `generate_otp_challenge!` and
+  # redirecting to the otp_credential path.
+  #
+  mattr_accessor :otp_challenge_via_strategy
+  @@otp_challenge_via_strategy = true
+
+  #
   # add PublicHelpers to helpers class variable to ensure that per-mapping helpers are present.
   # this integrates with the "define_helpers," which is run when adding each mapping in the Devise gem (lib/devise.rb#541)
   #

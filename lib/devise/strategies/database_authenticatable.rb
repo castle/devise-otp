@@ -38,6 +38,8 @@ module Devise
       # resource should be challenged for otp
       #
       def otp_challenge_required_on?(resource)
+        return false unless ::Devise.otp_challenge_via_strategy
+
         resource.respond_to?(:otp_enabled?) && resource.otp_enabled?
       end
 
