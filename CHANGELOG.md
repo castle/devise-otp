@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.0.0.castle.2 (Castle fork)
+
+- Drop the dead `app.config.assets.precompile << "devise-otp.js"`
+  registration (and the now-unused
+  `config.devise_otp.precompile_assets` opt-out) from the engine.
+  Upstream 2.0.0 stopped shipping any JavaScript (the QR code is now
+  rendered server-side as an inline SVG via `rqrcode` in
+  `otp_authenticator_token_image`), so the precompile entry pointed at
+  a file that no longer exists and would raise
+  `Sprockets::FileNotFound` during asset precompile in any app that
+  uses Sprockets/Propshaft and inherits this registration. Apps that
+  want the gem's `app/assets/stylesheets/devise-otp.css` precompiled
+  can still add it to their own `assets.precompile` list — nothing was
+  auto-registering the CSS before either.
+
 ## 2.0.0.castle.1 (Castle fork)
 
 - Fix `Refreshable` hook raising `TypeError` on every sign-in when
